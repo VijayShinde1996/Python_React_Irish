@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Flower Prediction</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Iris Flower Prediction</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="sepal_length">Sepal Length (cm):</label>
+                <input type="number" class="form-control" name="sepal_length" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="sepal_width">Sepal Width (cm):</label>
+                <input type="number" class="form-control" name="sepal_width" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="petal_length">Petal Length (cm):</label>
+                <input type="number" class="form-control" name="petal_length" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="petal_width">Petal Width (cm):</label>
+                <input type="number" class="form-control" name="petal_width" step="0.1" required>
+            </div>
+            <button type="submit" class="btn btn-success btn-block">Predict Species</button>
+        </form>
+
+        {% if prediction %}
+        <div class="flash-message text-center">
+            {{ prediction }}
+        </div>
+        {% endif %}
+
+        {% if flower_image %}
+        <div class="text-center">
+            <img src="{{ flower_image }}" alt="Predicted Iris Flower" class="img-fluid">
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

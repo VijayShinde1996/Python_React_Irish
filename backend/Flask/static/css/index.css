@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+h1 {
+    color: #4CAF50;
+}
+
+.flash-message {
+    background-color: #ffeb3b;
+    color: #ff5722;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    animation: flash 1s ease-in-out infinite;
+}
+
+@keyframes flash {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+img {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    border-radius: 10px;
+}
